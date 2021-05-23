@@ -3,15 +3,9 @@
 function config($configuration)
 {
     $string = explode('.', $configuration);
-    
-    $string_count = count($string);
-    
     $filename = $string[0];
-    
     $config = readConfigFile($filename);
-    
-    $data = (is_array($config) && array_key_exists($string[1], $config)) ? $config[$string[1]] : 'configuration value not found!'; 
-    
+    $data = (is_array($config) && array_key_exists($string[1], $config)) ? $config[$string[1]] : 'configuration value not found!';
     return $data;
 }
 
@@ -24,4 +18,3 @@ function readConfigFile($filename)
     $file = (file_exists($filepath)) ? include($filepath) : "{$filepath} not found!";
     return $file;
 }
-

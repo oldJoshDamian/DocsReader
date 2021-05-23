@@ -3,32 +3,33 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ config('app.name') . ' - Laravel' }}@yield('subtitle')</title>
+    <title><?php echo e(config('app.name') . ' - Laravel'); ?><?php echo $__env->yieldContent('subtitle'); ?></title>
 
-    <link rel="stylesheet" href="{{ asset('css/bulma.css') }}">
+    <link rel="stylesheet" href="<?php echo e(asset('css/bulma.css')); ?>">
 
     <script src="//cdn.jsdelivr.net/npm/eruda"></script>
     <script>
         eruda.init();
     </script>
-    @yield('sendFileScript')
+    <?php echo $__env->yieldContent('sendFileScript'); ?>
 </head>
 
 <body>
     <div id="app" class="container">
         <nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <a class="navbar-item" href="{{ url('home') }}">
+                <a class="navbar-item" href="<?php echo e(url('home')); ?>">
                     <p class="title is-5">
-                        {{ config('app.name') }}
+                        <?php echo e(config('app.name')); ?>
+
                     </p>
                 </a>
             </div>
         </nav>
         <main>
-            @yield('content')
+            <?php echo $__env->yieldContent('content'); ?>
         </main>
     </div>
 </body>
 
-</html>
+</html><?php /**PATH /home/joshua/Documents/Helloworld/helpers/DocsReader/resources/views/layouts/app.blade.php ENDPATH**/ ?>
